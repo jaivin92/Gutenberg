@@ -4,10 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/"
     tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400px"
+        android:src="@drawable/pattern"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
+        android:id="@+id/h1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30px"
@@ -17,5 +23,135 @@
         android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/h2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/head2"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="48px"
+        android:layout_marginHorizontal="30px"
+        app:layout_constraintTop_toBottomOf="@id/h1"
+        />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linear"
+            app:layout_constraintTop_toBottomOf="@id/h2"
+            android:layout_marginTop="50px"
+            android:layout_marginHorizontal="30px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:elevation="8dp"
+            android:clipToPadding="true"
+            android:padding="5dp"
+            android:clipToOutline="true"
+            android:clipChildren="true"
+            android:background="@drawable/squrebox">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/fiction"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="GENRE"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="20px"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:layout_marginStart="20px"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/next"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear1"
+        app:layout_constraintTop_toBottomOf="@id/linear"
+        android:layout_marginTop="50px"
+        android:layout_marginHorizontal="30px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="8dp"
+        android:clipToPadding="true"
+        android:padding="5dp"
+        android:clipToOutline="true"
+        android:clipChildren="true"
+        android:background="@drawable/squrebox">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/fiction"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="GENRE"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="20px"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:layout_marginStart="20px"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear2"
+        app:layout_constraintTop_toBottomOf="@id/linear1"
+        android:layout_marginTop="50px"
+        android:layout_marginHorizontal="30px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="8dp"
+        android:clipToPadding="true"
+        android:padding="5dp"
+        android:clipToOutline="true"
+        android:clipChildren="true"
+        android:background="@drawable/squrebox">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/fiction"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="GENRE"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="20px"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:layout_marginStart="20px"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

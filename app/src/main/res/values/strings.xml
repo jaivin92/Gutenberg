@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Gutenberg</string>
     <string name="gutenberg_project">Gutenberg \nProject</string>
+    <string name="head2">A social cataloging website that allows you to freely search its database of books, annotations, and reviews.</string>
 </resources>
