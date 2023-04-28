@@ -4,154 +4,303 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightblue"
     tools:context=".MainActivity">
+
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="400px"
-        android:src="@drawable/pattern"
+        android:layout_height="220dp"
         android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:src="@drawable/pattern"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/h1"
+        style="@style/header1"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30px"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
         android:text="@string/gutenberg_project"
-        android:fontFamily="@font/montserrat_semibold"
-        android:textSize="48px"
-        android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/h2"
+        style="@style/header2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/head2"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/montserrat_regular"
-        android:textSize="48px"
-        android:layout_marginHorizontal="30px"
-        app:layout_constraintTop_toBottomOf="@id/h1"
-        />
+        android:text="@string/head2"
+        app:layout_constraintTop_toBottomOf="@id/h1" />
 
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linear"
-            app:layout_constraintTop_toBottomOf="@id/h2"
-            android:layout_marginTop="50px"
-            android:layout_marginHorizontal="30px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:elevation="8dp"
-            android:clipToPadding="true"
-            android:padding="5dp"
-            android:clipToOutline="true"
-            android:clipChildren="true"
-            android:background="@drawable/squrebox">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/fiction"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="GENRE"
-                android:fontFamily="@font/montserrat_regular"
-                android:textSize="20px"
-                android:textColor="@color/black"
-                android:gravity="center_vertical"
-                android:layout_marginStart="20px"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/next"/>
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linear1"
-        app:layout_constraintTop_toBottomOf="@id/linear"
-        android:layout_marginTop="50px"
-        android:layout_marginHorizontal="30px"
+        android:id="@+id/fiction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:elevation="8dp"
-        android:clipToPadding="true"
-        android:padding="5dp"
-        android:clipToOutline="true"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
+        android:layout_marginTop="@dimen/squareboxtopmargin"
+        android:background="@drawable/squrebox"
         android:clipChildren="true"
-        android:background="@drawable/squrebox">
+        android:clipToOutline="true"
+        android:clipToPadding="true"
+        android:elevation="@dimen/elevation"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/squarelistpadding"
+        app:layout_constraintTop_toBottomOf="@id/h2">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/fiction"/>
+            android:layout_width="@dimen/iconsize"
+            android:layout_height="@dimen/iconsize"
+            android:src="@drawable/fiction" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/genercard"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="GENRE"
-            android:fontFamily="@font/montserrat_regular"
-            android:textSize="20px"
-            android:textColor="@color/black"
+            android:layout_marginStart="20px"
+            android:layout_weight="1"
             android:gravity="center_vertical"
-            android:layout_marginStart="20px"/>
+            android:text="@string/fiction" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/next"/>
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/next" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linear2"
-        app:layout_constraintTop_toBottomOf="@id/linear1"
-        android:layout_marginTop="50px"
-        android:layout_marginHorizontal="30px"
+        android:id="@+id/drama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:elevation="8dp"
-        android:clipToPadding="true"
-        android:padding="5dp"
-        android:clipToOutline="true"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
+        android:layout_marginTop="@dimen/squareboxtopmargin"
+        android:background="@drawable/squrebox"
         android:clipChildren="true"
-        android:background="@drawable/squrebox">
+        android:clipToOutline="true"
+        android:clipToPadding="true"
+        android:elevation="@dimen/elevation"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/squarelistpadding"
+        app:layout_constraintTop_toBottomOf="@id/fiction">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/fiction"/>
+            android:layout_width="@dimen/iconsize"
+            android:layout_height="@dimen/iconsize"
+            android:src="@drawable/drama" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/genercard"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="GENRE"
-            android:fontFamily="@font/montserrat_regular"
-            android:textSize="20px"
-            android:textColor="@color/black"
+            android:layout_marginStart="20px"
+            android:layout_weight="1"
             android:gravity="center_vertical"
-            android:layout_marginStart="20px"/>
+            android:text="@string/drama" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/next"/>
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/next" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/humor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
+        android:layout_marginTop="@dimen/squareboxtopmargin"
+        android:background="@drawable/squrebox"
+        android:clipChildren="true"
+        android:clipToOutline="true"
+        android:clipToPadding="true"
+        android:elevation="@dimen/elevation"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/squarelistpadding"
+        app:layout_constraintTop_toBottomOf="@id/drama">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/iconsize"
+            android:layout_height="@dimen/iconsize"
+            android:src="@drawable/humour" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/genercard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20px"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/humor" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/next" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/politics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
+        android:layout_marginTop="@dimen/squareboxtopmargin"
+        android:background="@drawable/squrebox"
+        android:clipChildren="true"
+        android:clipToOutline="true"
+        android:clipToPadding="true"
+        android:elevation="@dimen/elevation"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/squarelistpadding"
+        app:layout_constraintTop_toBottomOf="@id/humor">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/iconsize"
+            android:layout_height="@dimen/iconsize"
+            android:src="@drawable/politics" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/genercard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20px"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/politics" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/next" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/philosophy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
+        android:layout_marginTop="@dimen/squareboxtopmargin"
+        android:background="@drawable/squrebox"
+        android:clipChildren="true"
+        android:clipToOutline="true"
+        android:clipToPadding="true"
+        android:elevation="@dimen/elevation"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/squarelistpadding"
+        app:layout_constraintTop_toBottomOf="@id/politics">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/iconsize"
+            android:layout_height="@dimen/iconsize"
+            android:src="@drawable/philosophy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/genercard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20px"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/philosophy" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/next" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
+        android:layout_marginTop="@dimen/squareboxtopmargin"
+        android:background="@drawable/squrebox"
+        android:clipChildren="true"
+        android:clipToOutline="true"
+        android:clipToPadding="true"
+        android:elevation="@dimen/elevation"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/squarelistpadding"
+        app:layout_constraintTop_toBottomOf="@id/philosophy">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/iconsize"
+            android:layout_height="@dimen/iconsize"
+            android:src="@drawable/history" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/genercard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20px"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/history" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/next" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/adventure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/marginhorizontal"
+        android:layout_marginTop="@dimen/squareboxtopmargin"
+        android:background="@drawable/squrebox"
+        android:clipChildren="true"
+        android:clipToOutline="true"
+        android:clipToPadding="true"
+        android:elevation="@dimen/elevation"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/squarelistpadding"
+        app:layout_constraintTop_toBottomOf="@id/history">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/iconsize"
+            android:layout_height="@dimen/iconsize"
+            android:src="@drawable/adventure" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/genercard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20px"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/adventure" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/next" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity2">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/nexticonsize"
+            android:layout_height="@dimen/nexticonsize"
+            android:src="@drawable/back"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fiction"
+                style="@style/header2"
+                android:textColor="@color/blue"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/search"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/squrebox"
+        android:backgroundTint="@color/lightblue"
+        android:drawableStart="@drawable/wearch"
+        android:padding="5dp"
+        android:hint="Search"
+        android:drawablePadding="20px"
+        android:layout_marginHorizontal="10dp"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listview"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        android:layout_marginTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        android:layoutMode="clipBounds"
+        android:elevation="@dimen/elevation"
+        android:orientation="vertical"
+        tools:listitem="@layout/bookcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.jm.gutenberg
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -18,8 +19,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainActivityViewModel.getAllBooksResponse()
-        allbooksObservable()
+        //mainActivityViewModel.getAllBooksResponse()
+        //allbooksObservable()
+        binding.fiction.setOnClickListener {
+            startActivity(Intent(this, MainActivity2::class.java))
+        }
     }
 
     private  fun allbooksObservable(){

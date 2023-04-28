@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="paddinghorizontal">30dp</dimen>
+    <dimen name="marginhorizontal">30dp</dimen>
+
+    <dimen name="header1fontsize">40sp</dimen>
+    <dimen name="header2fontsize">15sp</dimen>
+    <dimen name="regularfontsize">16sp</dimen>
+
+    <dimen name="squreboxradius">5dp</dimen>
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="squarelistpadding">10dp</dimen>
+    <dimen name="squareboxtopmargin">20dp</dimen>
+
+
+    <dimen name="iconsize">20dp</dimen>
+    <dimen name="nexticonsize">15dp</dimen>
+</resources>
