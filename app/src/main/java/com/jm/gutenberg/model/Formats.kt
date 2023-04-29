@@ -1,8 +1,9 @@
 package com.jm.gutenberg.model
 
-import net.pwall.json.annotation.JSONName
+import com.google.gson.annotations.SerializedName
+
 
 data class Formats(
     //@Json(name = "image/jpeg")
-    @JSONName("image/jpeg")
+    @SerializedName("image/jpeg")
     val imageJPEG:String)

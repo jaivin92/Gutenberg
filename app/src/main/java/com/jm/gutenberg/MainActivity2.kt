@@ -28,7 +28,7 @@ class MainActivity2 : BaseActivity<ActivityMain2Binding> () {
                 when (resource){
                     is Resource.Success -> {
                         Log.d(TAG, "allbooksObservable: " + resource.data?.results!![1] )
-                        binding.listview.adapter = BookListView(resource.data?.results)
+                        binding.listview.adapter = BookListView(resource.data?.results,this)
                     }
                     is Resource.Error -> {
                         Log.e(TAG, "allbooksObservable: " + resource.message )

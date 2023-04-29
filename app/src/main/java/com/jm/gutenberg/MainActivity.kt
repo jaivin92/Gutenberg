@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import com.bumptech.glide.Glide
 import com.jm.gutenberg.api.Resource
 import com.jm.gutenberg.base.BaseActivity
 import com.jm.gutenberg.databinding.ActivityMainBinding
@@ -21,6 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
         //mainActivityViewModel.getAllBooksResponse()
         //allbooksObservable()
+        Glide.with(this).load("http://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg").into(binding.image)
         binding.fiction.setOnClickListener {
             startActivity(Intent(this, MainActivity2::class.java))
         }
