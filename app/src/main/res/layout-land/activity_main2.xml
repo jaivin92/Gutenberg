@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@id/search"
         android:layout_marginTop="20dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="3"
+        app:spanCount="6"
         android:layoutMode="clipBounds"
         android:elevation="@dimen/elevation"
         android:orientation="vertical"

@@ -3,6 +3,7 @@ package com.jm.gutenberg
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.jm.gutenberg.api.Resource
@@ -13,7 +14,7 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseActivity<ActivityMainBinding>() , View.OnClickListener {
     override fun createBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 
     private val mainActivityViewModel  by viewModels<MainActivityViewModel>()
@@ -22,10 +23,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
         //mainActivityViewModel.getAllBooksResponse()
         //allbooksObservable()
-        Glide.with(this).load("http://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg").into(binding.image)
-        binding.fiction.setOnClickListener {
-            startActivity(Intent(this, MainActivity2::class.java))
-        }
+        //Glide.with(this).load("http://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg").into(binding.image)
+//        binding.fiction.setOnClickListener {
+//            startActivity(Intent(this, MainActivity2::class.java))
+//        }
+        binding.fiction.setOnClickListener(this)
+        binding.drama.setOnClickListener(this)
     }
 
     private  fun allbooksObservable(){
@@ -49,5 +52,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     }
             }
         }
+    }
+
+    override fun onClick(view: View?) {
+            when(view?.id){
+                R.id.fiction->{
+                    openActivity(baseContext.getString(R.string.fiction))
+                }
+                R.id.drama->{
+                    openActivity(baseContext.getString(R.string.drama))
+                }
+            }
+    }
+
+    private fun openActivity (header : String){
+        val intent : Intent = Intent(this, MainActivity2::class.java);
+        intent.putExtra("header", header)
+        startActivity(intent)
     }
 }

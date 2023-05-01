@@ -1,5 +1,6 @@
 package com.jm.gutenberg
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -16,7 +17,8 @@ class MainActivity2 : BaseActivity<ActivityMain2Binding> () {
     private val mainActivityViewModel  by viewModels<MainActivityViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        //val data = intent.getStringExtra("header")
+        binding.headerTitle.setText(intent.getStringExtra("header"))
         mainActivityViewModel.getAllBooksResponse()
         allbooksObservable()
     }
@@ -44,4 +46,8 @@ class MainActivity2 : BaseActivity<ActivityMain2Binding> () {
         }
     }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        newConfig.orientation
+    }
 }
