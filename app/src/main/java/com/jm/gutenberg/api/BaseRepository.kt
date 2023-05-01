@@ -12,4 +12,6 @@ class BaseRepository @Inject constructor(
 
     suspend fun getAllBooks() = RetrofitHelper.connectAllData.getAllBooks()
 
+    suspend fun getSearchBooks(search:String ) = RetrofitHelper.connectAllData.searchBooks(search = search)
+
 }

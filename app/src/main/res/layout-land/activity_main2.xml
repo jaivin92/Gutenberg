@@ -47,10 +47,13 @@
         android:drawableStart="@drawable/wearch"
         android:padding="5dp"
         android:hint="Search"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:fontFamily="@font/montserrat_regular"
+        android:textStyle="bold"
         android:drawablePadding="20px"
         android:layout_marginHorizontal="10dp"
         />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listview"

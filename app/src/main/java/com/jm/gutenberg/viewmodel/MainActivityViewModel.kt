@@ -21,14 +21,20 @@ class MainActivityViewModel @Inject constructor(app: Application, private val re
     private val _allBooks = MutableLiveData<Event<Resource<BookListModel<SingelBook>>>>()
     val allBooks : LiveData<Event<Resource<BookListModel<SingelBook>>>> = _allBooks
 
+    private val _search =  MutableLiveData<Event<Resource<BookListModel<SingelBook>>>>()
+    val search : LiveData<Event<Resource<BookListModel<SingelBook>>>> = _search
+
     fun getAllBooksResponse () = viewModelScope.launch {
             getAllBooks()
     }
 
+    fun getSearchBook (search: String) = viewModelScope.launch {
+        searchBooks(search)
+    }
 
     private suspend fun getAllBooks(){
         _allBooks.postValue(Event(Resource.Loading()))
-        var response = repository.getAllBooks()
+        val response = repository.getAllBooks()
         _allBooks.postValue(getAllBooksEvent(response))
     }
 
@@ -40,4 +46,11 @@ class MainActivityViewModel @Inject constructor(app: Application, private val re
             }
         return Event(Resource.Error(response.message()))
     }
+
+    private suspend fun searchBooks(search:String){
+        _search.postValue(Event(Resource.Loading()))
+        val response = repository.getSearchBooks(search)
+        _search.postValue(getAllBooksEvent(response))
+    }
+
 }

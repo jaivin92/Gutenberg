@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.jm.gutenberg.databinding.BookcardBinding
 import com.jm.gutenberg.model.SingelBook
-import com.squareup.picasso.Picasso
-import okhttp3.HttpUrl.Companion.toHttpUrl
-import java.net.URL
+
 
 class BookListView ( private val listdata : List<SingelBook>, private  val  context: Context) : RecyclerView.Adapter<BookListView.BookViewHolder>(){
     inner class BookViewHolder(val bookcardBinding: BookcardBinding): RecyclerView.ViewHolder(bookcardBinding.root)
@@ -29,6 +27,7 @@ class BookListView ( private val listdata : List<SingelBook>, private  val  cont
         with(holder){
             with(listdata[position]){
                 bookcardBinding.bookname.setText(this.title)
+                bookcardBinding.book.setText(this.authors[0].name)
                 if(this.formats.imageJPEG != null){
                     Log.e("taggg", "onBindViewHolder: " + this.formats.imageJPEG )
                     Glide.with(context).load(this.formats.imageJPEG).into(bookcardBinding.bookimage)

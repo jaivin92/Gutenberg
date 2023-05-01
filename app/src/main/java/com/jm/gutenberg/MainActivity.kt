@@ -17,42 +17,19 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() , View.OnClickListener {
     override fun createBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 
-    private val mainActivityViewModel  by viewModels<MainActivityViewModel>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //mainActivityViewModel.getAllBooksResponse()
-        //allbooksObservable()
-        //Glide.with(this).load("http://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg").into(binding.image)
-//        binding.fiction.setOnClickListener {
-//            startActivity(Intent(this, MainActivity2::class.java))
-//        }
+
         binding.fiction.setOnClickListener(this)
         binding.drama.setOnClickListener(this)
+        binding.humor.setOnClickListener (this)
+        binding.politics.setOnClickListener (this)
+        binding.philosophy.setOnClickListener (this)
+        binding.history.setOnClickListener (this)
+        binding.adventure.setOnClickListener (this)
     }
 
-    private  fun allbooksObservable(){
-        mainActivityViewModel.allBooks.observe(this@MainActivity){
-            event ->
-            event.getContentIfNotHandled()?.let {
-                    resource ->
-                    when (resource){
-                            is Resource.Success -> {
-                                Log.d(TAG, "allbooksObservable: " + resource.data?.results!![0].title )
-                            }
-                            is Resource.Error -> {
-                                Log.e(TAG, "allbooksObservable: " + resource.message )
-                            }
-                            is Resource.ErrorBody -> {
-                                Log.e(TAG, "allbooksObservable: " + resource.message  )
-                            }
-                            is Resource.Loading -> {
-                                Log.e(TAG, "allbooksObservable: "+ "Start" )
-                            }
-                    }
-            }
-        }
-    }
+
 
     override fun onClick(view: View?) {
             when(view?.id){
@@ -61,6 +38,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>() , View.OnClickListener 
                 }
                 R.id.drama->{
                     openActivity(baseContext.getString(R.string.drama))
+                }
+                R.id.humor->{
+                    openActivity(baseContext.getString(R.string.humor))
+                }
+                R.id.politics->{
+                    openActivity(baseContext.getString(R.string.politics))
+                }
+                R.id.philosophy->{
+                    openActivity(baseContext.getString(R.string.philosophy))
+                }
+                R.id.history->{
+                    openActivity(baseContext.getString(R.string.history))
+                }
+                R.id.adventure->{
+                    openActivity(baseContext.getString(R.string.adventure))
                 }
             }
     }
